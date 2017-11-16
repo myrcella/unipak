@@ -26,3 +26,5 @@ Tutustu [Quick Start](https://reactjs.org/docs/hello-world.html)-oppaaseen tai v
         * Page 2: cost + receiver
 
 Kaikki olennainen sovelluksen tila sekä kovakoodattu fake-data tulee olla App-komponentin tilana. Alempien komponenttien renderöintiin tarvittava tieto sekä tilan muuttamista varten tarvittavat callback-funktiot annetaan propseina alikomponenteille. Tieto, jonka halutaan säilyvän seuraavaan käyttökertaan tulee tallentaa [localstorageen](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+
+Monisivuiset komponentit voi toteuttaa yhtenä komponenttina, joka renderöi eri sivut sisäisen tilan perusteella ja vasta lopuksi päivittää tiedot sovelluksen tilaan.
