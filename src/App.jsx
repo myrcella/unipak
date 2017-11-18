@@ -13,13 +13,28 @@ export default class App extends React.Component {
     };
   }
 
+  setUser = (user) => {
+    this.setState({ user });
+  }
+
+  showSendView = () => {
+    this.setState({ showSendView: true });
+  }
+
+  hideSendView = () => {
+    this.setState({ showSendView: false });
+  }
+
   render() {
     if (!this.state.user) {
-      return <Auth />;
+      return <Auth setUser={this.setUser} />;
     }
     if (this.state.showSendView) {
-      return <SendView />;
+      return <SendView hideSendView={this.hideSendView} />;
     }
-    return <DeliverView deliveries={this.state.deliveries} />;
+    return (<DeliverView
+      deliveries={this.state.deliveries}
+      showSendView={this.showSendView}
+    />);
   }
 }
