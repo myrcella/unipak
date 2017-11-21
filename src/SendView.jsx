@@ -7,6 +7,14 @@ export default class SendView extends React.Component {
   }
 
   render() {
-    return <div>TODO: SendView</div>;
+    return (
+      <div>
+        TODO: SendView<br />
+        <input
+          type="button"
+          value="Back"
+          onClick={this.props.hideSendView}
+        />
+      </div>);
   }
 }

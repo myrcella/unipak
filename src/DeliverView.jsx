@@ -24,6 +24,14 @@ export default class DeliverView extends React.Component {
         closeDetails={this.closeDetails}
       />);
     }
-    return <div>TODO: DeliverView</div>;
+    return (
+      <div>
+        TODO: DeliverView<br />
+        <input
+          type="button"
+          value="Send something"
+          onClick={this.props.showSendView}
+        />
+      </div>);
   }
 }
