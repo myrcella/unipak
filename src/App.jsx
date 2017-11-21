@@ -14,7 +14,14 @@ export default class App extends React.Component {
   }
 
   setUser = (user) => {
-    this.setState({ user });
+    this.setState({
+      user,
+      deliveries: [
+        { name: 'Delivery 1', id: '1' },
+        { name: 'Delivery 2', id: '2' },
+        { name: 'Delivery 3', id: '3' },
+      ],
+    });
   }
 
   showSendView = () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import DeliveryDetails from './DeliveryDetails';
+import DeliverMapMarker from './DeliverMapMarker';
 
 export default class DeliverView extends React.Component {
   constructor(props) {
@@ -32,6 +33,12 @@ export default class DeliverView extends React.Component {
           value="Send something"
           onClick={this.props.showSendView}
         />
+        {this.props.deliveries.map(delivery =>
+          (<DeliverMapMarker
+            delivery={delivery}
+            showDetails={this.showDetails}
+            key={delivery.id}
+          />))}
       </div>);
   }
 }
