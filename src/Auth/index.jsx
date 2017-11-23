@@ -49,7 +49,7 @@ export default class Auth extends React.Component {
 
   render() {
     if (!this.state.userInfo) {
-      return <BasicInfo />;
+      return <BasicInfo setUserInfo={this.setUserInfo} />;
     }
     if (!this.state.strongAuth) {
       return <StrongAuth />;
