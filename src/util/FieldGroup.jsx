@@ -2,12 +2,12 @@ import React from 'react';
 import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
 
 export default function FieldGroup({
-  id, label, help, ...props
+  name, label, help, ...props
 }) {
   return (
-    <FormGroup controlId={id}>
+    <FormGroup controlId={name}>
       <ControlLabel>{label}</ControlLabel>
-      <FormControl {...props} />
+      <FormControl name={name} {...props} />
       {help && <HelpBlock>{help}</HelpBlock>}
     </FormGroup>
   );
