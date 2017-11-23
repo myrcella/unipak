@@ -1,4 +1,8 @@
 import React from 'react';
+import BasicInfo from './BasicInfo';
+import StrongAuth from './StrongAuth';
+import PaymentMethod from './PaymentMethod';
+import Customization from './Customization';
 
 export default class Auth extends React.Component {
   constructor(props) {
@@ -45,30 +49,14 @@ export default class Auth extends React.Component {
 
   render() {
     if (!this.state.userInfo) {
-      return (
-        <form>
-          TODO: Auth: basic info
-        </form>
-      );
+      return <BasicInfo />;
     }
     if (!this.state.strongAuth) {
-      return (
-        <form>
-          TODO: Auth: strong auth
-        </form>
-      );
+      return <StrongAuth />;
     }
     if (!this.state.paymentMethod) {
-      return (
-        <form>
-          TODO: Auth: payment method
-        </form>
-      );
+      return <PaymentMethod />;
     }
-    return (
-      <form>
-          TODO: Auth: customization
-      </form>
-    );
+    return <Customization />;
   }
 }
