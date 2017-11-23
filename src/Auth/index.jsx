@@ -9,12 +9,16 @@ export default class Auth extends React.Component {
     super(props);
 
     // Try to restore the info saved before navigating to bank page
+    const bankReturn = window.location.hash.match(/^#strongauth=(success|cancel)$/);
     const savedState = window.localStorage.getItem('authState');
-    if (savedState && window.location.hash.includes('strongauth=success')) {
+    if (bankReturn && savedState) {
       window.localStorage.removeItem('authState');
       window.location.hash = '';
       this.state = JSON.parse(savedState);
-      this.state.strongAuth = {};
+      const bankStatus = bankReturn[1];
+      if (bankStatus === 'success') {
+        this.state.strongAuth = {};
+      }
     } else {
       this.state = {
         userInfo: null,
