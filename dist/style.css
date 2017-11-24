@@ -2,3 +2,11 @@ html, body, #app {
   height: 100%;
   margin: 0;
 }
+
+.btnOr {
+	background-color: #FFBD4A;
+}
+
+.btnGr {
+	background-color: #99E265;
+}
