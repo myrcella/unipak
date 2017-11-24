@@ -9,11 +9,16 @@ export default class Auth extends React.Component {
     super(props);
 
     // Try to restore the info saved before navigating to bank page
+    const bankReturn = window.location.hash.match(/^#strongauth=(success|cancel)$/);
     const savedState = window.localStorage.getItem('authState');
-    if (savedState && window.location.hash.includes('strongauth=success')) {
-      this.state = JSON.parse(savedState);
+    if (bankReturn && savedState) {
       window.localStorage.removeItem('authState');
-      this.state.strongAuth = {};
+      window.location.hash = '';
+      this.state = JSON.parse(savedState);
+      const bankStatus = bankReturn[1];
+      if (bankStatus === 'success') {
+        this.state.strongAuth = {};
+      }
     } else {
       this.state = {
         userInfo: null,
@@ -37,6 +42,10 @@ export default class Auth extends React.Component {
     window.location.assign('./bank.html');
   }
 
+  skipStrongAuth = () => {
+    this.setState({ strongAuth: 'skip' });
+  }
+
   login = (customization) => {
     // We have all the data now, pass it to App
     this.props.setUser({
@@ -49,14 +58,14 @@ export default class Auth extends React.Component {
 
   render() {
     if (!this.state.userInfo) {
-      return <BasicInfo />;
+      return <BasicInfo setUserInfo={this.setUserInfo} />;
     }
     if (!this.state.strongAuth) {
-      return <StrongAuth />;
+      return <StrongAuth start={this.startStrongAuth} skip={this.skipStrongAuth} />;
     }
     if (!this.state.paymentMethod) {
-      return <PaymentMethod />;
+      return <PaymentMethod setPaymentMethod={this.setPaymentMethod} />;
     }
-    return <Customization />;
+    return <Customization setCustomization={this.login} />;
   }
 }

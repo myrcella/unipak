@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 export default class StrongAuth extends React.Component {
   constructor(props) {
@@ -9,7 +10,9 @@ export default class StrongAuth extends React.Component {
   render() {
     return (
       <form>
-        TODO: Auth: strong auth
+        TODO: Auth: strong auth<br />
+        <Button onClick={this.props.start}>Authenticate with DummyBank</Button>
+        <Button onClick={this.props.skip}>Skip for now</Button>
       </form>
     );
   }

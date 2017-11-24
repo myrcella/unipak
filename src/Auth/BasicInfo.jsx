@@ -5,7 +5,15 @@ import FieldGroup from '../util/FieldGroup';
 export default class BasicInfo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userName: '',
+      realName: '',
+      email: '',
+      phone: '',
+      dateOfBirth: '',
+      termsAccepted: false,
+      newsletter: false,
+    };
   }
 
   handleChange = (event) => {
@@ -18,24 +26,31 @@ export default class BasicInfo extends React.Component {
     });
   }
 
+  handleSubmit = (event) => {
+    // TODO Validation
+    // State object should match what setUserInfo expects
+    this.props.setUserInfo(this.state);
+    event.preventDefault();
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         TODO: Auth: basic info
         <FieldGroup
-          name="username"
+          name="userName"
           type="text"
           label="Username"
           help="Your username will be visible to all users."
-          value={this.state.username}
+          value={this.state.userName}
           onChange={this.handleChange}
         />
         <FieldGroup
-          name="realname"
+          name="realName"
           type="text"
           label="Real name"
           help="Your real name will only be visible to those users you interact with."
-          value={this.state.realname}
+          value={this.state.realName}
           onChange={this.handleChange}
         />
         <FieldGroup
@@ -59,7 +74,7 @@ export default class BasicInfo extends React.Component {
           value={this.state.dateOfBirth}
           onChange={this.handleChange}
         />
-        <Checkbox name="terms" value={this.state.terms} onChange={this.handleChange}>
+        <Checkbox name="termsAccepted" value={this.state.termsAccepted} onChange={this.handleChange}>
           I agree to Unipak Terms and Conditions
         </Checkbox>
         <Checkbox name="newsletter" value={this.state.newsletter} onChange={this.handleChange}>
