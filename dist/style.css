@@ -3,10 +3,23 @@ html, body, #app {
   margin: 0;
 }
 
+#app {
+	background-color: #3699FD;
+}
+
+.btnUni {
+	color: white;
+	font: Helvetica Arial sans-serif;
+}
+
 .btnOr {
 	background-color: #FFBD4A;
 }
 
 .btnGr {
 	background-color: #99E265;
+}
+
+.formUni {
+	background-color: #D9D9D9;
 }
