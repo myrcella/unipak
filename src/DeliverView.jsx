@@ -3,6 +3,7 @@ import GoogleMap from 'google-map-react';
 import DeliveryDetails from './DeliveryDetails';
 import DeliverMapMarker from './DeliverMapMarker';
 import DeliverMapPopup from './DeliverMapPopup';
+import DeliverViewBanner from './DeliverViewBanner';
 
 export default class DeliverView extends React.Component {
   constructor(props) {
@@ -40,12 +41,7 @@ export default class DeliverView extends React.Component {
       <div
         style={{ height: '80%' }}
       >
-        TODO: DeliverView<br />
-        <input
-          type="button"
-          value="Send something"
-          onClick={this.props.showSendView}
-        />
+        <DeliverViewBanner />
         <GoogleMap
           onClick={this.closePopup}
           defaultCenter={{ lat: 60.186, lng: 24.831 }}
