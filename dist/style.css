@@ -7,6 +7,10 @@ html, body, #app {
 	background-color: #3699FD;
 }
 
+.mapMarkerStar {
+	height: 5vmin;
+}
+
 .btnUni {
 	color: white;
 	font: Helvetica Arial sans-serif;
