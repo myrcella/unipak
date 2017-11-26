@@ -8,7 +8,14 @@ html, body, #app {
 }
 
 .mapMarkerStar {
-	height: 5vmin;
+	height: 3vmin;
+	fill: #3699FD;
+	cursor: pointer;
+}
+
+.mapPopup {
+	padding: 5px;
+	background-color: #3699FD;
 }
 
 .btnUni {

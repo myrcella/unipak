@@ -17,9 +17,9 @@ export default class App extends React.Component {
     this.setState({
       user,
       deliveries: [
-        { name: 'Delivery 1', id: '1' },
-        { name: 'Delivery 2', id: '2' },
-        { name: 'Delivery 3', id: '3' },
+        { name: 'Delivery 1', id: '1', location: { lat: 60.186, lng: 24.832 } },
+        { name: 'Delivery 2', id: '2', location: { lat: 60.187, lng: 24.831 } },
+        { name: 'Delivery 3', id: '3', location: { lat: 60.187, lng: 24.832 } },
       ],
     });
   }

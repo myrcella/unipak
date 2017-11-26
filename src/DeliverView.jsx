@@ -1,4 +1,5 @@
 import React from 'react';
+import GoogleMap from 'google-map-react';
 import DeliveryDetails from './DeliveryDetails';
 import DeliverMapMarker from './DeliverMapMarker';
 import DeliverMapPopup from './DeliverMapPopup';
@@ -36,30 +37,38 @@ export default class DeliverView extends React.Component {
       />);
     }
     return (
-      /* eslint-disable jsx-a11y/click-events-have-key-events */
-      // No time to make this demo blind people compatible
-      <div onClick={this.closePopup} role="presentation">
+      <div
+        style={{ height: '80%' }}
+      >
         TODO: DeliverView<br />
         <input
           type="button"
           value="Send something"
           onClick={this.props.showSendView}
         />
-        {this.props.deliveries.map(delivery => (
-          <DeliverMapMarker
-            delivery={delivery}
-            showPopup={this.showPopup}
-            key={delivery.id}
-          >
-            {delivery === this.state.deliveryPopup
-            ?
-              <DeliverMapPopup
-                delivery={delivery}
-                showDetails={this.showDetails}
-              />
-            : null}
-          </DeliverMapMarker>
-        ))}
+        <GoogleMap
+          onClick={this.closePopup}
+          defaultCenter={{ lat: 60.186, lng: 24.831 }}
+          defaultZoom={15}
+        >
+          {this.props.deliveries.map(delivery => (
+            <DeliverMapMarker
+              delivery={delivery}
+              showPopup={this.showPopup}
+              key={delivery.id}
+              lat={delivery.location.lat}
+              lng={delivery.location.lng}
+            >
+              {delivery === this.state.deliveryPopup
+              ?
+                <DeliverMapPopup
+                  delivery={delivery}
+                  showDetails={this.showDetails}
+                />
+              : null}
+            </DeliverMapMarker>
+          ))}
+        </GoogleMap>
       </div>);
   }
 }

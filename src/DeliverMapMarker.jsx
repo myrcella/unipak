@@ -1,8 +1,7 @@
 import React from 'react';
 
 export default class DeliverMapMarker extends React.Component {
-  showPopup = (event) => {
-    event.stopPropagation();
+  showPopup = () => {
     this.props.showPopup(this.props.delivery);
   }
 
