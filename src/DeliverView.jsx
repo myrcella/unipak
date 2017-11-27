@@ -31,40 +31,48 @@ export default class DeliverView extends React.Component {
   }
 
   render() {
-    if (this.state.deliveryDetails) {
-      return (<DeliveryDetails
+    const detailsView = (
+      <DeliveryDetails
         delivery={this.state.deliveryDetails}
         closeDetails={this.closeDetails}
-      />);
-    }
+      />
+    );
     return (
-      <div
-        style={{ height: '80%' }}
-      >
-        <DeliverViewBanner />
-        <GoogleMap
-          onClick={this.closePopup}
-          defaultCenter={{ lat: 60.186, lng: 24.831 }}
-          defaultZoom={15}
+      <div style={{ height: '100%' }}>
+        <div
+          style={{
+            height: '100%',
+            display: this.state.deliveryDetails ? 'none' : 'flex',
+            flexDirection: 'column',
+          }}
         >
-          {this.props.deliveries.map(delivery => (
-            <DeliverMapMarker
-              delivery={delivery}
-              showPopup={this.showPopup}
-              key={delivery.id}
-              lat={delivery.location.lat}
-              lng={delivery.location.lng}
-            >
-              {delivery === this.state.deliveryPopup
-              ?
-                <DeliverMapPopup
-                  delivery={delivery}
-                  showDetails={this.showDetails}
-                />
-              : null}
-            </DeliverMapMarker>
-          ))}
-        </GoogleMap>
-      </div>);
+          <DeliverViewBanner />
+          <GoogleMap
+            onClick={this.closePopup}
+            defaultCenter={{ lat: 60.186, lng: 24.831 }}
+            defaultZoom={15}
+          >
+            {this.props.deliveries.map(delivery => (
+              <DeliverMapMarker
+                delivery={delivery}
+                showPopup={this.showPopup}
+                key={delivery.id}
+                lat={delivery.location.lat}
+                lng={delivery.location.lng}
+              >
+                {delivery === this.state.deliveryPopup
+                ?
+                  <DeliverMapPopup
+                    delivery={delivery}
+                    showDetails={this.showDetails}
+                  />
+                : null}
+              </DeliverMapMarker>
+            ))}
+          </GoogleMap>
+        </div>
+        { this.state.deliveryDetails ? detailsView : null}
+      </div>
+    );
   }
 }
