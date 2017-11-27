@@ -1,9 +1,9 @@
 import React from 'react';
 import GoogleMap from 'google-map-react';
-import DeliveryDetails from './DeliveryDetails';
-import DeliverMapMarker from './DeliverMapMarker';
-import DeliverMapPopup from './DeliverMapPopup';
-import DeliverViewBanner from './DeliverViewBanner';
+import Details from './Details';
+import Marker from './Marker';
+import Popup from './Popup';
+import Banner from './Banner';
 
 export default class DeliverView extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class DeliverView extends React.Component {
 
   render() {
     const detailsView = (
-      <DeliveryDetails
+      <Details
         delivery={this.state.deliveryDetails}
         closeDetails={this.closeDetails}
       />
@@ -46,14 +46,14 @@ export default class DeliverView extends React.Component {
             flexDirection: 'column',
           }}
         >
-          <DeliverViewBanner />
+          <Banner />
           <GoogleMap
             onClick={this.closePopup}
             defaultCenter={{ lat: 60.186, lng: 24.831 }}
             defaultZoom={15}
           >
             {this.props.deliveries.map(delivery => (
-              <DeliverMapMarker
+              <Marker
                 delivery={delivery}
                 showPopup={this.showPopup}
                 key={delivery.id}
@@ -62,12 +62,12 @@ export default class DeliverView extends React.Component {
               >
                 {delivery === this.state.deliveryPopup
                 ?
-                  <DeliverMapPopup
+                  <Popup
                     delivery={delivery}
                     showDetails={this.showDetails}
                   />
                 : null}
-              </DeliverMapMarker>
+              </Marker>
             ))}
           </GoogleMap>
         </div>

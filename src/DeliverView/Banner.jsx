@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function DeliverViewBanner({ showSendView }) {
+export default function Banner({ showSendView }) {
   return (
     <div>
       TODO: DeliverView banner<br />

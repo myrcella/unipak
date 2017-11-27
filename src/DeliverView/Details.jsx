@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-// This component can probably be stateless
-export default function DeliveryDetails(props) {
+export default function Details(props) {
   return (
     <div>
       TODO: DeliveryDetails <br />

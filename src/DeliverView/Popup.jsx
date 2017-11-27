@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-export default class DeliverMapPopup extends React.Component {
+export default class Popup extends React.Component {
   showDetails = () => {
     this.props.showDetails(this.props.delivery);
   }

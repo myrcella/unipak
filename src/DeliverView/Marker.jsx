@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class DeliverMapMarker extends React.Component {
+export default class Marker extends React.Component {
   showPopup = () => {
     this.props.showPopup(this.props.delivery);
   }
