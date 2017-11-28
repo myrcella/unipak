@@ -5,6 +5,20 @@ import Marker from './Marker';
 import Popup from './Popup';
 import Banner from './Banner';
 
+
+function createMapOptions() {
+  return {
+    clickableIcons: false,
+    fullscreenControl: false,
+    styles: [
+      {
+        featureType: 'poi',
+        stylers: [{ visibility: 'on' }],
+      },
+    ],
+  };
+}
+
 export default class DeliverView extends React.Component {
   constructor(props) {
     super(props);
@@ -49,6 +63,7 @@ export default class DeliverView extends React.Component {
           <Banner />
           <GoogleMap
             onClick={this.closePopup}
+            options={createMapOptions}
             defaultCenter={{ lat: 60.186, lng: 24.831 }}
             defaultZoom={15}
           >
