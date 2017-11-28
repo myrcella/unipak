@@ -45,12 +45,33 @@ export default class DeliverView extends React.Component {
   }
 
   render() {
-    const detailsView = (
-      <Details
-        delivery={this.state.deliveryDetails}
-        closeDetails={this.closeDetails}
-      />
-    );
+    const detailsView = this.state.deliveryDetails ?
+      (
+        <Details
+          delivery={this.state.deliveryDetails}
+          closeDetails={this.closeDetails}
+        />
+      ) : null;
+
+    const markers = this.props.deliveries.map(delivery =>
+      (
+        <Marker
+          delivery={delivery}
+          showPopup={this.showPopup}
+          key={delivery.id}
+          lat={delivery.location.lat}
+          lng={delivery.location.lng}
+        >
+          {delivery === this.state.deliveryPopup
+          ?
+            <Popup
+              delivery={delivery}
+              showDetails={this.showDetails}
+            />
+          : null}
+        </Marker>
+      ));
+
     return (
       <div style={{ height: '100%' }}>
         <div
@@ -67,26 +88,10 @@ export default class DeliverView extends React.Component {
             defaultCenter={{ lat: 60.186, lng: 24.831 }}
             defaultZoom={15}
           >
-            {this.props.deliveries.map(delivery => (
-              <Marker
-                delivery={delivery}
-                showPopup={this.showPopup}
-                key={delivery.id}
-                lat={delivery.location.lat}
-                lng={delivery.location.lng}
-              >
-                {delivery === this.state.deliveryPopup
-                ?
-                  <Popup
-                    delivery={delivery}
-                    showDetails={this.showDetails}
-                  />
-                : null}
-              </Marker>
-            ))}
+            {markers}
           </GoogleMap>
         </div>
-        { this.state.deliveryDetails ? detailsView : null}
+        {detailsView}
       </div>
     );
   }
