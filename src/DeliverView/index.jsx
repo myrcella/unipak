@@ -10,6 +10,7 @@ function createMapOptions() {
   return {
     clickableIcons: false,
     fullscreenControl: false,
+    scaleControl: true,
     styles: [
       {
         featureType: 'poi',
