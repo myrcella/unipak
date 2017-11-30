@@ -2,6 +2,7 @@ import React from 'react';
 import Auth from './Auth';
 import SendView from './SendView';
 import DeliverView from './DeliverView';
+import * as fake from './FakeData';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,11 +17,7 @@ export default class App extends React.Component {
   setUser = (user) => {
     this.setState({
       user,
-      deliveries: [
-        { name: 'Delivery 1', id: '1', location: { lat: 60.186, lng: 24.832 } },
-        { name: 'Delivery 2', id: '2', location: { lat: 60.187, lng: 24.831 } },
-        { name: 'Delivery 3', id: '3', location: { lat: 60.187, lng: 24.832 } },
-      ],
+      deliveries: fake.deliveries,
     });
   }
 
