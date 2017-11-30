@@ -82,7 +82,7 @@ export default class DeliverView extends React.Component {
             flexDirection: 'column',
           }}
         >
-          <Banner />
+          <Banner showSendView={this.props.showSendView} />
           <GoogleMap
             onClick={this.closePopup}
             options={createMapOptions}
