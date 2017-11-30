@@ -3,8 +3,29 @@ html, body, #app {
   margin: 0;
 }
 
-#app {
+.topBanner {
 	background-color: #3699FD;
+	display: flex;
+	align-items: center;
+	height: 30vw;
+}
+
+.topBannerLogo {
+	color: #FFBD4A;
+	font-style: normal;
+	font-size: 20vw;
+	font-family: Helvetica, Arial, sans-serif;
+	width: 25vw;
+	text-align: center;
+}
+
+.topBannerText {
+	width: 75vw;
+	color: #FFFFFF;
+	font-style: italic;
+	font-size: 8vw;
+	font-family: Georgia;
+	text-align: center;
 }
 
 .mapMarkerStar {

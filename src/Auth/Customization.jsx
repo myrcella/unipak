@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import TopBanner from '../util/TopBanner';
 
 export default class Customization extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export default class Customization extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <TopBanner text="Almost ready" />
         TODO: Auth: customization<br />
         <Button type="submit">Next</Button>
       </form>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Checkbox, Button } from 'react-bootstrap';
 import FieldGroup from '../util/FieldGroup';
+import TopBanner from '../util/TopBanner';
 
 export default class BasicInfo extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export default class BasicInfo extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        TODO: Auth: basic info
+        <TopBanner text="Welcome!" />
         <FieldGroup
           name="userName"
           type="text"
