@@ -21,6 +21,10 @@ function createMapOptions() {
   };
 }
 
+// Shallow compare sees different object and doesn't realize values are same.
+// Const object outside render() avoids warning.
+const defaultCenter = { lat: 60.186, lng: 24.831 };
+
 export default class DeliverView extends React.Component {
   constructor(props) {
     super(props);
@@ -96,7 +100,7 @@ export default class DeliverView extends React.Component {
           }}
           onClick={this.closePopup}
           options={createMapOptions}
-          defaultCenter={{ lat: 60.186, lng: 24.831 }}
+          defaultCenter={defaultCenter}
           defaultZoom={15}
         >
           {markers}

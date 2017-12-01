@@ -3,10 +3,10 @@ import { FormGroup, Button, Radio } from 'react-bootstrap';
 import TopBanner from '../util/TopBanner';
 
 function ImgRadio({
-  name, value, testValue, alt, src,
+  name, value, testValue, onChange, alt, src,
 }) {
   return (
-    <Radio name={name} value={value} checked={value === testValue} inline>
+    <Radio name={name} value={value} checked={value === testValue} onChange={onChange} inline>
       <img alt={alt} src={src} />
     </Radio>
   );
@@ -41,11 +41,12 @@ export default class Customization extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <TopBanner text="Almost ready" />
         <h2>Customize your profile</h2>
-        <FormGroup className="imgRadioGroup" onChange={this.handleChange}>
+        <FormGroup className="imgRadioGroup">
           <ImgRadio
             name="avatar"
             value="standard"
             testValue={this.state.avatar}
+            onChange={this.handleChange}
             alt="Standard"
             src="./img/logo.png"
           />
@@ -53,6 +54,7 @@ export default class Customization extends React.Component {
             name="avatar"
             value="pink"
             testValue={this.state.avatar}
+            onChange={this.handleChange}
             alt="Pink"
             src="./img/logopnk.png"
           />
@@ -60,6 +62,7 @@ export default class Customization extends React.Component {
             name="avatar"
             value="metal"
             testValue={this.state.avatar}
+            onChange={this.handleChange}
             alt="Metal"
             src="./img/logometal.png"
           />
