@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Banner({ showSendView }) {
+export default function ButtonBar({ showSendView }) {
   return (
     <div>
-      TODO: DeliverView banner<br />
+      TODO: DeliverView ButtonBar<br />
       <input
         type="button"
         value="Send something"

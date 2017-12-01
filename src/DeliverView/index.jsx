@@ -3,7 +3,7 @@ import GoogleMap from 'google-map-react';
 import Details from './Details';
 import Marker from './Marker';
 import Popup from './Popup';
-import Banner from './Banner';
+import ButtonBar from './ButtonBar';
 
 
 function createMapOptions() {
@@ -82,7 +82,7 @@ export default class DeliverView extends React.Component {
             flexDirection: 'column',
           }}
         >
-          <Banner showSendView={this.props.showSendView} />
+          <ButtonBar showSendView={this.props.showSendView} />
           <GoogleMap
             onClick={this.closePopup}
             options={createMapOptions}
