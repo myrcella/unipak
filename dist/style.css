@@ -43,6 +43,11 @@ html, body, #app {
 	display: flex;
 }
 
+.imgRadioGroup label{
+	padding: 0;
+	margin: 0 3vw;
+}
+
 .imgRadioGroup input[type=radio] {
 	display: none;
 }
