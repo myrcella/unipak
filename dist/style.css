@@ -39,6 +39,23 @@ html, body, #app {
 	background-color: #3699FD;
 }
 
+.imgRadioGroup {
+	display: flex;
+}
+
+.imgRadioGroup input[type=radio] {
+	display: none;
+}
+
+.imgRadioGroup input[type=radio] + img {
+	max-width: 100%;
+	border: 2px solid transparent;
+}
+
+.imgRadioGroup input[type=radio]:checked + img {
+	border: 2px solid #FFBD4A;
+}
+
 .btnUni {
 	color: white;
 	font: Helvetica Arial sans-serif;

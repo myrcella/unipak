@@ -18,6 +18,8 @@ export default class Auth extends React.Component {
       const bankStatus = bankReturn[1];
       if (bankStatus === 'success') {
         this.state.strongAuth = {};
+      } else if (bankStatus === 'cancel') {
+        this.state.strongAuthCancel = true;
       }
     } else {
       this.state = {
@@ -61,7 +63,13 @@ export default class Auth extends React.Component {
       return <BasicInfo setUserInfo={this.setUserInfo} />;
     }
     if (!this.state.strongAuth) {
-      return <StrongAuth start={this.startStrongAuth} skip={this.skipStrongAuth} />;
+      return (
+        <StrongAuth
+          start={this.startStrongAuth}
+          skip={this.skipStrongAuth}
+          cancelled={this.state.strongAuthCancel}
+        />
+      );
     }
     if (!this.state.paymentMethod) {
       return <PaymentMethod setPaymentMethod={this.setPaymentMethod} />;

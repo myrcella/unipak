@@ -1,11 +1,32 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { FormGroup, Button, Radio } from 'react-bootstrap';
 import TopBanner from '../util/TopBanner';
+
+function ImgRadio({
+  name, value, testValue, alt, src,
+}) {
+  return (
+    <Radio name={name} value={value} checked={value === testValue} inline>
+      <img alt={alt} src={src} />
+    </Radio>
+  );
+}
 
 export default class Customization extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      avatar: 'standard', // Set a default value to make UI more obvious
+    };
+  }
+
+  handleChange = (event) => {
+    const input = event.target;
+    const key = input.name;
+
+    this.setState({
+      [key]: input.value,
+    });
   }
 
   handleSubmit = (event) => {
@@ -19,7 +40,30 @@ export default class Customization extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <TopBanner text="Almost ready" />
-        TODO: Auth: customization<br />
+        <h2>Customize your profile</h2>
+        <FormGroup className="imgRadioGroup" onChange={this.handleChange}>
+          <ImgRadio
+            name="avatar"
+            value="standard"
+            testValue={this.state.avatar}
+            alt="Standard"
+            src="./img/logo.png"
+          />
+          <ImgRadio
+            name="avatar"
+            value="pink"
+            testValue={this.state.avatar}
+            alt="Pink"
+            src="./img/logopnk.png"
+          />
+          <ImgRadio
+            name="avatar"
+            value="metal"
+            testValue={this.state.avatar}
+            alt="Metal"
+            src="./img/logometal.png"
+          />
+        </FormGroup>
         <Button type="submit">Next</Button>
       </form>
     );
