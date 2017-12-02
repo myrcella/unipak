@@ -65,6 +65,7 @@ html, body, #app {
 .btnUni {
 	color: white;
 	font: Helvetica Arial sans-serif;
+	width: 100%;
 }
 
 .btnOr {

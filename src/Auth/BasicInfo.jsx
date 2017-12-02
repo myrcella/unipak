@@ -81,7 +81,7 @@ export default class BasicInfo extends React.Component {
         <Checkbox name="newsletter" value={this.state.newsletter} onChange={this.handleChange}>
           I wish to receive Unipak newsletter
         </Checkbox>
-        <Button type="submit">
+        <Button bsClass="btn btnGr btnUni" type="submit" block>
           Next
         </Button>
       </form>
