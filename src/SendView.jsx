@@ -1,5 +1,6 @@
 import React from 'react';
-import { Checkbox, Button } from 'react-bootstrap';
+import { Button, InputGroup, FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
+import Moment from 'moment';
 import FieldGroup from './util/FieldGroup';
 import TopBanner from './util/TopBanner';
 
@@ -12,14 +13,22 @@ export default class SendView extends React.Component {
       content: '',
       date: '',
       time: '',
-      offer: '',
+      offer: '3.00', // Default offer
     };
   }
 
   handleChange = (event) => {
     const input = event.target;
     const key = input.name;
-    const value = input.type === 'checkbox' ? input.checked : input.value;
+    let value = input.type === 'checkbox' ? input.checked : input.value;
+
+    if (input.type === 'date') {
+      value = Moment(value, 'YYYY-MM-DD');
+    }
+
+    if (input.type === 'time') {
+      value = Moment(value, 'HH:mm');
+    }
 
     this.setState({
       [key]: value,
@@ -61,6 +70,31 @@ export default class SendView extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
+        <FieldGroup
+          name="date"
+          type="date"
+          label="Date"
+          value={this.state.date}
+          onChange={this.handleChange}
+        />
+        <FieldGroup
+          name="time"
+          type="time"
+          label="Time"
+          value={this.state.time}
+          onChange={this.handleChange}
+        />
+        <FormGroup controlId="offer">
+          <ControlLabel>Offer</ControlLabel>
+          <InputGroup>
+            <FormControl name="offer" type="number" step="0.01" min="0" value={this.state.offer} onChange={this.handleChange} />
+            <InputGroup.Addon>€</InputGroup.Addon>
+          </InputGroup>
+          <HelpBlock>
+            How much are you willing to pay for this delivery.
+            Larger offers are more likely to be selected by a deliveryman.
+          </HelpBlock>
+        </FormGroup>
         <Button bsClass="btn btn-lg btnGr btnUni" type="submit" block onClick={this.handleSubmit}>
           Submit
         </Button>
