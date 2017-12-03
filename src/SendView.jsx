@@ -46,61 +46,63 @@ export default class SendView extends React.Component {
     return (
       <div>
         <TopBanner text="Send something" />
-        <FieldGroup
-          name="fromAddress"
-          type="text"
-          label="From address"
-          help="Where should the package be picked up from"
-          value={this.state.fromAddress}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="toAddress"
-          type="text"
-          label="To address"
-          help="Where do you want it dropped off"
-          value={this.state.toAddress}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="content"
-          type="text"
-          label="Content"
-          help="Describe the content (i.e. 'electronics')"
-          value={this.state.content}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="date"
-          type="date"
-          label="Date"
-          value={this.state.date}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="time"
-          type="time"
-          label="Time"
-          value={this.state.time}
-          onChange={this.handleChange}
-        />
-        <FormGroup controlId="offer">
-          <ControlLabel>Offer</ControlLabel>
-          <InputGroup>
-            <FormControl name="offer" type="number" step="0.01" min="0" value={this.state.offer} onChange={this.handleChange} />
-            <InputGroup.Addon>€</InputGroup.Addon>
-          </InputGroup>
-          <HelpBlock>
-            How much are you willing to pay for this delivery.
-            Larger offers are more likely to be selected by a deliveryman.
-          </HelpBlock>
-        </FormGroup>
-        <Button bsClass="btn btn-lg btnGr btnUni" type="submit" block onClick={this.handleSubmit}>
-          Submit
-        </Button>
-        <Button bsClass="btn btn-lg btnOr btnUni" type="button" block onClick={this.props.hideSendView}>
-          Back
-        </Button>
+        <form onSubmit={this.handleSubmit}>
+          <FieldGroup
+            name="fromAddress"
+            type="text"
+            label="From address"
+            help="Where should the package be picked up from"
+            value={this.state.fromAddress}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="toAddress"
+            type="text"
+            label="To address"
+            help="Where do you want it dropped off"
+            value={this.state.toAddress}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="content"
+            type="text"
+            label="Content"
+            help="Describe the content (i.e. 'electronics')"
+            value={this.state.content}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="date"
+            type="date"
+            label="Date"
+            value={this.state.date}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="time"
+            type="time"
+            label="Time"
+            value={this.state.time}
+            onChange={this.handleChange}
+          />
+          <FormGroup controlId="offer">
+            <ControlLabel>Offer</ControlLabel>
+            <InputGroup>
+              <FormControl name="offer" type="number" step="0.01" min="0" value={this.state.offer} onChange={this.handleChange} />
+              <InputGroup.Addon>€</InputGroup.Addon>
+            </InputGroup>
+            <HelpBlock>
+              How much are you willing to pay for this delivery.
+              Larger offers are more likely to be selected by a deliveryman.
+            </HelpBlock>
+          </FormGroup>
+          <Button bsClass="btn btn-lg btnGr btnUni" type="submit" block>
+            Submit
+          </Button>
+          <Button bsClass="btn btn-lg btnOr btnUni" type="button" block onClick={this.props.hideSendView}>
+            Back
+          </Button>
+        </form>
       </div>);
   }
 }

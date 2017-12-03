@@ -36,43 +36,45 @@ export default class PaymentMethod extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
         <TopBanner text="Payment details" />
-        <h2>Before you can send packages, we need to know your payment details</h2>
-        <FieldGroup
-          name="cardNumber"
-          type="number"
-          label="Card number"
-          value={this.state.cardNumber}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="securityCode"
-          type="number"
-          label="Security code"
-          value={this.state.securityCode}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="expMonth"
-          type="number"
-          label="Expiration month"
-          value={this.state.expMonth}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="expYear"
-          type="number"
-          label="Expiration year"
-          value={this.state.expYear}
-          onChange={this.handleChange}
-        />
-        <Button block bsClass="btn btn-lg btnUni btnGr" type="submit">Next</Button>
-        <div>
-          If you don&apos;t plan to send packages or want to do this later:<br />
-          <Button block bsClass="btn btn-lg btnUni btnOr" onClick={this.skip}>Skip for now</Button>
-        </div>
-      </form>
+        <form onSubmit={this.handleSubmit}>
+          <h2>Before you can send packages, we need to know your payment details</h2>
+          <FieldGroup
+            name="cardNumber"
+            type="number"
+            label="Card number"
+            value={this.state.cardNumber}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="securityCode"
+            type="number"
+            label="Security code"
+            value={this.state.securityCode}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="expMonth"
+            type="number"
+            label="Expiration month"
+            value={this.state.expMonth}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="expYear"
+            type="number"
+            label="Expiration year"
+            value={this.state.expYear}
+            onChange={this.handleChange}
+          />
+          <Button block bsClass="btn btn-lg btnUni btnGr" type="submit">Next</Button>
+          <div>
+            If you don&apos;t plan to send packages or want to do this later:<br />
+            <Button block bsClass="btn btn-lg btnUni btnOr" onClick={this.skip}>Skip for now</Button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -36,55 +36,57 @@ export default class BasicInfo extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
         <TopBanner text="Welcome!" />
-        <FieldGroup
-          name="userName"
-          type="text"
-          label="Username"
-          help="Your username will be visible to all users."
-          value={this.state.userName}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="realName"
-          type="text"
-          label="Real name"
-          help="Your real name will only be visible to those users you interact with."
-          value={this.state.realName}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="email"
-          type="email"
-          label="E-mail"
-          value={this.state.email}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="phone"
-          type="tel"
-          label="Phone number"
-          value={this.state.phone}
-          onChange={this.handleChange}
-        />
-        <FieldGroup
-          name="dateOfBirth"
-          type="date"
-          label="Date of birth"
-          value={this.state.dateOfBirth}
-          onChange={this.handleChange}
-        />
-        <Checkbox name="termsAccepted" value={this.state.termsAccepted} onChange={this.handleChange}>
-          I agree to Unipak Terms and Conditions
-        </Checkbox>
-        <Checkbox name="newsletter" value={this.state.newsletter} onChange={this.handleChange}>
-          I wish to receive Unipak newsletter
-        </Checkbox>
-        <Button bsClass="btn btn-lg btnGr btnUni" type="submit" block>
-          Next
-        </Button>
-      </form>
+        <form onSubmit={this.handleSubmit}>
+          <FieldGroup
+            name="userName"
+            type="text"
+            label="Username"
+            help="Your username will be visible to all users."
+            value={this.state.userName}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="realName"
+            type="text"
+            label="Real name"
+            help="Your real name will only be visible to those users you interact with."
+            value={this.state.realName}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="email"
+            type="email"
+            label="E-mail"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="phone"
+            type="tel"
+            label="Phone number"
+            value={this.state.phone}
+            onChange={this.handleChange}
+          />
+          <FieldGroup
+            name="dateOfBirth"
+            type="date"
+            label="Date of birth"
+            value={this.state.dateOfBirth}
+            onChange={this.handleChange}
+          />
+          <Checkbox name="termsAccepted" value={this.state.termsAccepted} onChange={this.handleChange}>
+            I agree to Unipak Terms and Conditions
+          </Checkbox>
+          <Checkbox name="newsletter" value={this.state.newsletter} onChange={this.handleChange}>
+            I wish to receive Unipak newsletter
+          </Checkbox>
+          <Button bsClass="btn btn-lg btnGr btnUni" type="submit" block>
+            Next
+          </Button>
+        </form>
+      </div>
     );
   }
 }

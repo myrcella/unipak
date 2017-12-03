@@ -38,37 +38,39 @@ export default class Customization extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
         <TopBanner text="Almost ready" />
-        <h2>Customize your profile</h2>
-        <FormGroup className="imgRadioGroup">
-          <ImgRadio
-            name="avatar"
-            value="standard"
-            testValue={this.state.avatar}
-            onChange={this.handleChange}
-            alt="Standard"
-            src="./img/logo.png"
-          />
-          <ImgRadio
-            name="avatar"
-            value="pink"
-            testValue={this.state.avatar}
-            onChange={this.handleChange}
-            alt="Pink"
-            src="./img/logopnk.png"
-          />
-          <ImgRadio
-            name="avatar"
-            value="metal"
-            testValue={this.state.avatar}
-            onChange={this.handleChange}
-            alt="Metal"
-            src="./img/logometal.png"
-          />
-        </FormGroup>
-        <Button block bsClass="btn btn-lg btnUni btnGr" type="submit">Next</Button>
-      </form>
+        <form onSubmit={this.handleSubmit}>
+          <h2>Customize your profile</h2>
+          <FormGroup className="imgRadioGroup">
+            <ImgRadio
+              name="avatar"
+              value="standard"
+              testValue={this.state.avatar}
+              onChange={this.handleChange}
+              alt="Standard"
+              src="./img/logo.png"
+            />
+            <ImgRadio
+              name="avatar"
+              value="pink"
+              testValue={this.state.avatar}
+              onChange={this.handleChange}
+              alt="Pink"
+              src="./img/logopnk.png"
+            />
+            <ImgRadio
+              name="avatar"
+              value="metal"
+              testValue={this.state.avatar}
+              onChange={this.handleChange}
+              alt="Metal"
+              src="./img/logometal.png"
+            />
+          </FormGroup>
+          <Button block bsClass="btn btn-lg btnUni btnGr" type="submit">Next</Button>
+        </form>
+      </div>
     );
   }
 }

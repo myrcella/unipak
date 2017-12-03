@@ -3,11 +3,22 @@ html, body, #app {
   margin: 0;
 }
 
+#app > div {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#app > div > * {
+	overflow-y: auto;
+}
+
 .topBanner {
 	background-color: #3699FD;
 	display: flex;
 	align-items: center;
 	height: 30vw;
+	flex-shrink: 0;
 }
 
 .topBannerLogo {
