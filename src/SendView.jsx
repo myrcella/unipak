@@ -7,13 +7,13 @@ export default class SendView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-			fromAddress: '',
-			toAddress: '',
-			content: '',
-			date: '',
-			time: '',
-			offer: '',
-		};
+      fromAddress: '',
+      toAddress: '',
+      content: '',
+      date: '',
+      time: '',
+      offer: '',
+    };
   }
 
   handleChange = (event) => {
@@ -28,8 +28,8 @@ export default class SendView extends React.Component {
 
   handleSubmit = (event) => {
     // TODO Validation
-    // State object should match what setDeliveryInfo expects
-    this.props.setDeliveryInfo(this.state);
+    // State object should match what submitDelivery expects
+    this.props.submitDelivery(this.state);
     event.preventDefault();
   }
 
@@ -61,10 +61,10 @@ export default class SendView extends React.Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <Button bsClass="btn btn-lg btnGr btnUni" type="submit" block>
+        <Button bsClass="btn btn-lg btnGr btnUni" type="submit" block onClick={this.handleSubmit}>
           Submit
         </Button>
-        <Button bsClass="btn btn-lg btnOr btnUni" type="button" block>
+        <Button bsClass="btn btn-lg btnOr btnUni" type="button" block onClick={this.props.hideSendView}>
           Back
         </Button>
       </div>);

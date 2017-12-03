@@ -29,16 +29,30 @@ export default class App extends React.Component {
     this.setState({ showSendView: false });
   }
 
+  submitDelivery = () => {
+    // TODO record deliveries sent by user
+    this.hideSendView();
+  }
+
   render() {
     if (!this.state.user) {
       return <Auth setUser={this.setUser} />;
     }
+
     if (this.state.showSendView) {
-      return <SendView hideSendView={this.hideSendView} />;
+      return (
+        <SendView
+          hideSendView={this.hideSendView}
+          submitDelivery={this.submitDelivery}
+        />
+      );
     }
-    return (<DeliverView
-      deliveries={this.state.deliveries}
-      showSendView={this.showSendView}
-    />);
+
+    return (
+      <DeliverView
+        deliveries={this.state.deliveries}
+        showSendView={this.showSendView}
+      />
+    );
   }
 }
