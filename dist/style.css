@@ -48,7 +48,8 @@ html, body, #app {
 
 .mapPopup {
 	padding: 5px;
-	background-color: #3699FD;
+	background-color: #FFFFFF;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 .imgRadioGroup {
@@ -75,7 +76,7 @@ html, body, #app {
 
 .btnUni {
 	color: white;
-	font: Helvetica Arial sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	width: 96%;
 	margin: 2%;
 }
@@ -90,9 +91,4 @@ html, body, #app {
 
 .form-group, .checkbox, p, h, h2 {
 	padding: 10px;
-}
-
-.mapPopup {
-	background-color: #FFFFFF;
-	font: Helvetica Arial sans-serif;
 }
