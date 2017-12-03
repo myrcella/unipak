@@ -19,7 +19,7 @@ export default class Popup extends React.Component {
         Bearing: {Number(bearing).toFixed(0)}°<br />
         Distance: {Number(distance).toFixed(0)} m<br />
         Deliver by: {delivery.deliverLatest.calendar()}
-        <Button onClick={this.showDetails}>Show details</Button>
+        <Button bsClass="btn btnGr btnUni" onClick={this.showDetails}>Show details</Button>
       </div>
     );
   }

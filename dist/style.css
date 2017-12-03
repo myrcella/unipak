@@ -80,3 +80,8 @@ html, body, #app {
 .form-group, .checkbox, p, h, h2 {
 	padding: 10px;
 }
+
+.mapPopup {
+	background-color: #FFFFFF;
+	font: Helvetica Arial sans-serif;
+}

@@ -28,8 +28,8 @@ export default class SendView extends React.Component {
 
   handleSubmit = (event) => {
     // TODO Validation
-    // State object should match what setUserInfo expects
-    this.props.setUserInfo(this.state);
+    // State object should match what setDeliveryInfo expects
+    this.props.setDeliveryInfo(this.state);
     event.preventDefault();
   }
 
