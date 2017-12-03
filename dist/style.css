@@ -65,7 +65,8 @@ html, body, #app {
 .btnUni {
 	color: white;
 	font: Helvetica Arial sans-serif;
-	width: 100%;
+	width: 96%;
+	margin: 2%;
 }
 
 .btnOr {
@@ -76,6 +77,6 @@ html, body, #app {
 	background-color: #99E265;
 }
 
-.formUni {
-	background-color: #D9D9D9;
+.form-group, .checkbox, p, h, h2 {
+	padding: 10px;
 }
