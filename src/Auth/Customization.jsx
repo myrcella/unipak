@@ -68,7 +68,7 @@ export default class Customization extends React.Component {
               src="./img/logometal.png"
             />
           </FormGroup>
-          <Button block bsClass="btn btn-lg btnUni btnGr" type="submit">Next</Button>
+          <Button block bsSize="lg" bsStyle="uniGr" type="submit">Next</Button>
         </form>
       </div>
     );

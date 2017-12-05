@@ -96,10 +96,10 @@ export default class SendView extends React.Component {
               Larger offers are more likely to be selected by a deliveryman.
             </HelpBlock>
           </FormGroup>
-          <Button bsClass="btn btn-lg btnGr btnUni" type="submit" block>
+          <Button block bsSize="lg" bsStyle="uniGr" type="submit">
             Submit
           </Button>
-          <Button bsClass="btn btn-lg btnOr btnUni" type="button" block onClick={this.props.hideSendView}>
+          <Button block bsSize="lg" bsStyle="uniOr" onClick={this.props.hideSendView}>
             Back
           </Button>
         </form>

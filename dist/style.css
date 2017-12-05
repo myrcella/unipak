@@ -74,18 +74,18 @@ html, body, #app {
 	border: 2px solid #FFBD4A;
 }
 
-.btnUni {
+.btn-uniGr, .btn-uniOr {
 	color: white;
 	font-family: Helvetica, Arial, sans-serif;
 	width: 96%;
 	margin: 2%;
 }
 
-.btnOr {
+.btn-uniOr {
 	background-color: #FFBD4A;
 }
 
-.btnGr {
+.btn-uniGr {
 	background-color: #99E265;
 }
 

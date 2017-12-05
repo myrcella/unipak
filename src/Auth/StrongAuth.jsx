@@ -16,15 +16,15 @@ export default class StrongAuth extends React.Component {
           <h2>Before you can deliver packages, we need to confirm your identity</h2>
           <div>
             Choose an identification service:<br />
-            <Button bsClass="btn btnUni btnGr" onClick={this.props.start}>DummyBank</Button><br />
-            <Button bsClass="btn btnUni btnGr" disabled>Aktia</Button><br />
-            <Button bsClass="btn btnUni btnGr" disabled>Danske Bank</Button><br />
-            <Button bsClass="btn btnUni btnGr" disabled>Nordea</Button><br />
-            <Button bsClass="btn btnUni btnGr" disabled>S-Pankki</Button><br />
+            <Button bsStyle="uniGr" onClick={this.props.start}>DummyBank</Button><br />
+            <Button bsStyle="uniGr" disabled>Aktia</Button><br />
+            <Button bsStyle="uniGr" disabled>Danske Bank</Button><br />
+            <Button bsStyle="uniGr" disabled>Nordea</Button><br />
+            <Button bsStyle="uniGr" disabled>S-Pankki</Button><br />
           </div>
           <div>
             If you don&apos;t plan to deliver packages or want to do this later:<br />
-            <Button block bsClass="btn btn-lg btnUni btnOr" onClick={this.props.skip}>Skip for now</Button>
+            <Button block bsSize="lg" bsStyle="uniOr" onClick={this.props.skip}>Skip for now</Button>
           </div>
         </form>
       </div>

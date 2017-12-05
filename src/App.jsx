@@ -3,6 +3,7 @@ import Auth from './Auth';
 import SendView from './SendView';
 import DeliverView from './DeliverView';
 import * as fake from './FakeData';
+import './util/bsCustomButton'; // This just needs to be imported once somewhere in the App
 
 export default class App extends React.Component {
   constructor(props) {
