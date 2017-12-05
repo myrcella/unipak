@@ -69,10 +69,8 @@ export default class PaymentMethod extends React.Component {
             onChange={this.handleChange}
           />
           <Button block bsSize="lg" bsStyle="uniGr" type="submit">Next</Button>
-          <div>
-            If you don&apos;t plan to send packages or want to do this later:
-            <Button block bsSize="lg" bsStyle="uniOr" onClick={this.skip}>Skip for now</Button>
-          </div>
+          <p>If you don&apos;t plan to send packages or want to do this later:</p>
+          <Button block bsSize="lg" bsStyle="uniOr" onClick={this.skip}>Skip for now</Button>
         </form>
       </div>
     );

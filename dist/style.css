@@ -77,8 +77,6 @@ html, body, #app {
 .btn-uniGr, .btn-uniOr {
 	color: white;
 	font-family: Helvetica, Arial, sans-serif;
-	width: 96%;
-	margin: 2%;
 }
 
 .btn-uniOr {
@@ -89,6 +87,10 @@ html, body, #app {
 	background-color: #99E265;
 }
 
-.form-group, .checkbox, p, h, h2 {
-	padding: 10px;
+form {
+	padding: 2%;
+}
+
+p {
+	margin: 2% 0;
 }
