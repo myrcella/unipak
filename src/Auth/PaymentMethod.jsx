@@ -70,7 +70,7 @@ export default class PaymentMethod extends React.Component {
           />
           <Button block bsSize="lg" bsStyle="uniGr" type="submit">Next</Button>
           <div>
-            If you don&apos;t plan to send packages or want to do this later:<br />
+            If you don&apos;t plan to send packages or want to do this later:
             <Button block bsSize="lg" bsStyle="uniOr" onClick={this.skip}>Skip for now</Button>
           </div>
         </form>
