@@ -36,8 +36,17 @@ html, body, #app {
 	color: #FFFFFF;
 	font-style: italic;
 	font-size: 8vw;
-	font-family: Georgia;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	text-align: center;
+}
+
+.mapBanner {
+	background-color: #FFBD4A;
+	font-style: italic;
+	font-size: 6vw;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	text-align: center;
+	padding: 2%;
 }
 
 .mapMarkerStar {
@@ -87,7 +96,7 @@ html, body, #app {
 	background-color: #99E265;
 }
 
-form {
+form, .buttonBar {
 	padding: 2%;
 }
 

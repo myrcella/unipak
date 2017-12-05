@@ -1,14 +1,12 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 export default function ButtonBar({ showSendView }) {
   return (
-    <div>
-      TODO: DeliverView ButtonBar<br />
-      <input
-        type="button"
-        value="Send something"
-        onClick={showSendView}
-      />
+    <div className="buttonBar">
+      <Button block bsSize="lg" bsStyle="uniGr" onClick={showSendView}>
+        Send something
+      </Button>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Details from './Details';
 import Marker from './Marker';
 import Popup from './Popup';
 import ButtonBar from './ButtonBar';
+import MapBanner from './MapBanner';
 import TopBanner from '../util/TopBanner';
 
 
@@ -67,6 +68,10 @@ export default class DeliverView extends React.Component {
       null :
       <ButtonBar showSendView={this.props.showSendView} />;
 
+    const mapBanner = this.state.deliveryDetails ?
+      null :
+      <MapBanner />;
+
     const markers = this.props.deliveries.map(delivery =>
       (
         <Marker
@@ -92,6 +97,7 @@ export default class DeliverView extends React.Component {
         <TopBanner text={bannerText} />
         {detailsView}
         {buttonBar}
+        {mapBanner}
         <GoogleMap
           style={{
             display: this.state.deliveryDetails ? 'none' : null,
