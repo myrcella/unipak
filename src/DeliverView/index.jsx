@@ -72,6 +72,10 @@ export default class DeliverView extends React.Component {
       null :
       <MapBanner />;
 
+    const newLocation = this.state.deliveryPopup ?
+      this.state.deliveryPopup.location :
+      null;
+
     const markers = this.props.deliveries.map(delivery =>
       (
         <Marker
@@ -108,6 +112,7 @@ export default class DeliverView extends React.Component {
           options={createMapOptions}
           defaultCenter={defaultCenter}
           defaultZoom={15}
+          center={newLocation}
         >
           {markers}
         </GoogleMap>
