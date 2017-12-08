@@ -11,7 +11,7 @@ export default function Details({ delivery, closeDetails }) {
   // Extra number wrapper to prevent scientific notation when distanceInUnit > 100
   const distanceString = Number((distanceInUnit).toPrecision(2));
   return (
-    <div>
+    <div className="detailsView">
       <h2>&quot;{delivery.name}&quot;</h2>
       <p><b>Description:</b> {delivery.description}</p>
       <p><b>Size category:</b> {delivery.sizeClass}</p>

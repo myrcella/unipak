@@ -96,7 +96,7 @@ html, body, #app {
 	background-color: #99E265;
 }
 
-form, .buttonBar {
+form, .buttonBar, .detailsView {
 	padding: 2%;
 }
 
