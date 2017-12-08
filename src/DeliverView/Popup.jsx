@@ -13,11 +13,15 @@ export default class Popup extends React.Component {
     const dest = new LatLon(delivery.destination.lat, delivery.destination.lng);
     // const bearing = loc.initialBearingTo(dest); // for arrow
     const distance = loc.distanceTo(dest);
+    const distanceUnit = distance > 995 ? 'km' : 'm';
+    const distanceInUnit = distance > 995 ? distance / 1000 : distance;
+    // Extra number wrapper to prevent scientific notation when distanceInUnit > 100
+    const distanceString = Number((distanceInUnit).toPrecision(2));
     return (
       <div className="mapPopup" style={{ transform: 'translate(-50%)', display: 'inline-block' }}>
         Name: {delivery.name}<br />
         To: {delivery.destinationName}<br />
-        Distance: {Number(distance).toFixed(0)} m<br />
+        Distance: {distanceString} {distanceUnit}<br />
         Deliver after: {delivery.deliverEarliest.calendar()}<br />
         Reward: {delivery.reward} €<br />
         <Button bsStyle="uniGr" onClick={this.showDetails}>Show details</Button>
