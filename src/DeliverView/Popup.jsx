@@ -11,14 +11,15 @@ export default class Popup extends React.Component {
     const { delivery } = this.props;
     const loc = new LatLon(delivery.location.lat, delivery.location.lng);
     const dest = new LatLon(delivery.destination.lat, delivery.destination.lng);
-    const bearing = loc.initialBearingTo(dest);
+    // const bearing = loc.initialBearingTo(dest); // for arrow
     const distance = loc.distanceTo(dest);
     return (
       <div className="mapPopup" style={{ transform: 'translate(-50%)', display: 'inline-block' }}>
         Name: {delivery.name}<br />
-        Bearing: {Number(bearing).toFixed(0)}°<br />
+        To: {delivery.destinationName}<br />
         Distance: {Number(distance).toFixed(0)} m<br />
-        Deliver by: {delivery.deliverLatest.calendar()}
+        Deliver after: {delivery.deliverEarliest.calendar()}<br />
+        Reward: {delivery.reward} €<br />
         <Button bsStyle="uniGr" onClick={this.showDetails}>Show details</Button>
       </div>
     );
